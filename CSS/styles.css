@@ -1,0 +1,15 @@
+/* Sombras más suaves para las tarjetas y modales */
+.shadow-lg {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Transición global para interacciones */
+button, .client-name {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover en nombre de cliente */
+.client-name:hover {
+  color: #fa6b1b;
+  text-decoration: underline;
+}

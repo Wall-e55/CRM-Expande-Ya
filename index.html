@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Clientes y Servicios</title>
+  <!-- Tailwind CSS vía CDN (solo para desarrollo) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/estyles.css"/>
+</head>
+<body class="bg-gradient-to-r from-[#2e318f] to-[#fa6b1b] min-h-screen p-4">
+  <!-- Contenedor principal -->
+  <main class="max-w-5xl mx-auto space-y-6">
+
+    <!-- Cabecera general con botón de crear -->
+    <header class="flex justify-center">
+      <button
+        id="btnNew"
+        class="bg-[#fa6b1b] text-white rounded-full px-6 py-2 shadow-lg hover:scale-105 transition"
+      >
+        + Nuevo Cliente
+      </button>
+    </header>
+
+    <!-- Formulario para crear nuevo cliente -->
+    <section id="formNew" class="hidden bg-white rounded-lg p-6 shadow-lg">
+      <header class="mb-4">
+        <h2 class="text-2xl font-bold text-[#2e318f]">Crear Nuevo Cliente</h2>
+      </header>
+      <form class="space-y-4">
+        <fieldset class="space-y-4">
+          <legend class="sr-only">Datos del cliente</legend>
+          <label class="block">
+            <span class="font-semibold">Nombre:</span>
+            <input type="text" class="w-full border rounded px-3 py-2" placeholder="Nombre"/>
+          </label>
+          <label class="block">
+            <span class="font-semibold">Apellidos:</span>
+            <input type="text" class="w-full border rounded px-3 py-2" placeholder="Apellidos"/>
+          </label>
+          <label class="block">
+            <span class="font-semibold">DNI:</span>
+            <input type="text" class="w-full border rounded px-3 py-2" placeholder="DNI"/>
+          </label>
+          <label class="block">
+            <span class="font-semibold">Celular:</span>
+            <input type="text" class="w-full border rounded px-3 py-2" placeholder="Celular"/>
+          </label>
+          <label class="block">
+            <span class="font-semibold">Correo:</span>
+            <input type="email" class="w-full border rounded px-3 py-2" placeholder="Correo electrónico"/>
+          </label>
+        </fieldset>
+        <footer class="flex justify-end">
+          <button id="btnCancelNew" type="button" class="mr-2 px-4 py-2 border rounded hover:bg-gray-100">
+            Cancelar
+          </button>
+          <button type="submit" class="px-6 py-2 bg-[#2e318f] text-white rounded hover:opacity-90">
+            Guardar
+          </button>
+        </footer>
+      </form>
+    </section>
+
+    <!-- Listado de clientes -->
+    <section aria-label="Lista de clientes" class="space-y-4">
+      <!-- Cliente individual -->
+      <article class="card bg-white rounded-lg p-6 shadow-lg">
+        <header class="flex items-center justify-between">
+          <h3 class="text-xl font-bold cursor-pointer text-[#2e318f] client-name">
+            José Pablo Paucar
+          </h3>
+        </header>
+
+        <!-- Detalle y paquete de servicios -->
+        <aside class="mt-4 hidden client-info bg-gray-50 p-4 rounded space-y-6">
+          <!-- Datos personales -->
+          <section aria-labelledby="datos-cliente-1">
+            <h4 id="datos-cliente-1" class="sr-only">Datos del cliente</h4>
+            <p><strong>Apellidos:</strong> Paucar Quispe</p>
+            <p><strong>DNI:</strong> 12345678</p>
+            <p><strong>Celular:</strong> 987654321</p>
+            <p><strong>Correo:</strong> jose.pablo@example.com</p>
+          </section>
+
+          <!-- Paquete de servicios -->
+          <section aria-labelledby="paquete-1" class="bg-[#fa6b1b] rounded-lg p-4">
+            <header class="flex items-center justify-between mb-4">
+              <h4 id="paquete-1" class="text-2xl font-bold text-white">Paquete</h4>
+              <button
+                class="bg-white text-[#fa6b1b] rounded-full px-4 py-1 shadow hover:scale-105 transition"
+              >+ Agregar</button>
+            </header>
+
+            <!-- Tabla de servicios -->
+            <table class="min-w-full bg-white rounded-lg overflow-hidden">
+              <caption class="sr-only">Servicios contratados</caption>
+              <thead class="bg-[#fa6b1b] text-white">
+                <tr>
+                  <th scope="col" class="px-3 py-2 text-left">Nombre</th>
+                  <th scope="col" class="px-3 py-2 text-left">Monto</th>
+                  <th scope="col" class="px-3 py-2 text-center">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Servicio 1 -->
+                <tr class="border-b">
+                  <td class="px-3 py-2">Página web simple</td>
+                  <td class="px-3 py-2">300.00 s/.</td>
+                  <td class="px-3 py-2 text-center space-x-2">
+                    <button aria-label="Editar página web simple" class="hover:scale-110 transition inline-block">
+                      <!-- Icono lápiz -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline text-[#2e318f]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 112.036 5.036L7 21H3v-4L16.732 3.732z" />
+                      </svg>
+                    </button>
+                    <button aria-label="Eliminar página web simple" class="hover:scale-110 transition inline-block">
+                      <!-- Icono basura -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M19 7L5 7M6 7l1 12a2 2 0 002 2h6a2 2 0 002-2l1-12M10 11v6M14 11v6M9 7V4h6v3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <!-- Servicio 2 -->
+                <tr class="border-b">
+                  <td class="px-3 py-2">Branding</td>
+                  <td class="px-3 py-2">200.00 s/.</td>
+                  <td class="px-3 py-2 text-center space-x-2">
+                    <button aria-label="Editar branding" class="hover:scale-110 transition inline-block">
+                      <!-- Icono lápiz -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline text-[#2e318f]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 112.036 5.036L7 21H3v-4L16.732 3.732z" />
+                      </svg>
+                    </button>
+                    <button aria-label="Eliminar branding" class="hover:scale-110 transition inline-block">
+                      <!-- Icono basura -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M19 7L5 7M6 7l1 12a2 2 0 002 2h6a2 2 0 002-2l1-12M10 11v6M14 11v6M9 7V4h6v3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <!-- Fila Total -->
+                <tr>
+                  <td class="px-3 py-2 font-bold">Total</td>
+                  <td class="px-3 py-2 font-bold">500.00 s/.</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </aside>
+      </article>
+      <!-- /Cliente -->
+
+      <!-- Aquí puedes duplicar más <article> para otros clientes -->
+    </section>
+  </main>
+
+  <!-- Script de interactividad -->
+  <script>
+    // Nuevo cliente
+    document.getElementById('btnNew')
+      .addEventListener('click', () => document.getElementById('formNew').classList.toggle('hidden'));
+    document.getElementById('btnCancelNew')
+      .addEventListener('click', () => document.getElementById('formNew').classList.add('hidden'));
+
+    // Toggle info de cliente
+    document.querySelectorAll('.client-name').forEach(el =>
+      el.addEventListener('click', () => {
+        const info = el.closest('article').querySelector('.client-info');
+        info?.classList.toggle('hidden');
+      })
+    );
+  </script>
+</body>
+</html>
