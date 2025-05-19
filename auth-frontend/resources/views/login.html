@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Client Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(45deg, #0b0c51, #fd6a02);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .login-box {
+      max-width: 450px;
+      margin: 5% auto;
+      padding: 2rem;
+      border-radius: 1rem;
+      background: linear-gradient(to bottom, #292c7c, #f36b18);
+      color: #fff;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-control {
+      border-radius: .5rem;
+    }
+
+    .btn-login {
+      background-color: #1b1f70;
+      color: #fff;
+      border-radius: 2rem;
+      padding: 0.5rem 1.5rem;
+      font-weight: bold;
+    }
+
+    .btn-login:hover {
+      background-color: #0d1142;
+    }
+
+    .form-check-label, .form-text {
+      color: #fff;
+    }
+
+    .admin-link {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .admin-link:hover {
+      color: #ffcc00;
+    }
+
+    .footer-link {
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="admin-login.html" class="admin-link">🔐</a>
+
+  <main class="login-box text-center"> 
+    <img src="../../public/img/white_logo.png" alt="Logo" class="img-fluid mb-3" style="max-width: 150px;">
+
+
+    <h2 class="mb-4"> Client Login</h2>
+
+    <form action="/api/login" method="POST">
+      <div class="mb-3 text-start">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" required>
+      </div>
+
+      <div class="mb-3 text-start">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" required>
+      </div>
+
+      <div class="mb-3 text-start form-check">
+        <input type="checkbox" id="remember" name="remember" class="form-check-input">
+        <label for="remember" class="form-check-label">Remember Me</label>
+      </div>
+
+      <div class="mb-3 text-start">
+        <!-- Google reCAPTCHA placeholder -->
+        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+      </div>
+
+      <button type="submit" class="btn btn-login w-100 mt-3">Login</button>
+    </form>
+
+    <hr class="my-4" />
+
+    <p class="footer-link">Not a member yet? <a href="register.html" class="footer-link fw-bold">Create a New Account</a></p>
+  </main>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+</html>
