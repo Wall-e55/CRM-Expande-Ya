@@ -1,0 +1,249 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Un gris muy claro de fondo */
+    display: grid;
+    grid-template-columns: 220px 1fr; /* Ancho del sidebar ajustado */
+    grid-template-rows: 60px 1fr; /* Alto del header ajustado */
+    height: 100vh;
+}
+
+.main-header {
+    background-color: #ff8f00; /* Naranja similar al header */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: 1 / -1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.6em; /* Tamaño de la fuente del título */
+    font-weight: bold;
+}
+
+.header-actions button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3em;
+    margin-left: 15px;
+    cursor: pointer;
+    outline: none; /* Eliminar el contorno al enfocar */
+}
+
+.main-sidebar {
+    background-color: #311b92; /* Azul oscuro del sidebar */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alineación izquierda de los botones */
+}
+
+.main-sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.main-sidebar nav ul li {
+    margin-bottom: 10px;
+    width: 100%; /* Asegurar que los botones ocupen todo el ancho */
+}
+
+.main-sidebar nav ul li button {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    background-color: #5e35b1; /* Azul más claro de los botones del sidebar */
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 8px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    font-weight: bold;
+    outline: none;
+}
+
+.main-sidebar nav ul li button:hover {
+    background-color: #4527a0; /* Azul más oscuro al pasar el ratón */
+}
+
+.main-sidebar nav ul li a.sidebar-button {
+    display: block; /* Para que ocupe todo el ancho del li */
+    width: 100%;
+    padding: 12px 15px;
+    border: none; /* Quita el borde si lo tiene por defecto */
+    background-color: #5e35b1; /* Color de fondo de los botones del sidebar */
+    color: white;
+    text-align: left;
+    text-decoration: none; /* Quita el subrayado por defecto de los enlaces */
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    font-weight: bold;
+    outline: none;
+}
+
+.main-sidebar nav ul li a.sidebar-button:hover {
+    background-color: #4527a0; /* Color de fondo al pasar el ratón */
+}
+
+/* Si tienes un estado "activo" para estos enlaces (para indicar la página actual), puedes añadirlo: */
+.main-sidebar nav ul li a.sidebar-button.active {
+    background-color: #311b92; /* Azul oscuro para el botón activo */
+    color: white;
+}
+
+.main-content {
+    padding: 20px;
+    background-color: white;
+    overflow: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra sutil en el contenido */
+    border-radius: 8px; /* Bordes redondeados del contenido */
+    margin: 20px; /* Espacio alrededor del contenido */
+}
+
+.secondary-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.secondary-nav button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #e0e0e0; /* Gris claro de los botones secundarios */
+    color: #424242; /* Gris oscuro del texto de los botones secundarios */
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.95em;
+    font-weight: bold;
+    outline: none;
+}
+
+.secondary-nav button.active {
+    background-color: #ff8f00; /* Naranja activo */
+    color: white;
+}
+
+.secondary-nav button:hover {
+    background-color: #d1d1d1; /* Gris un poco más oscuro al pasar el ratón */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.search-bar label {
+    font-weight: bold;
+    color: #616161; /* Gris del texto de la etiqueta */
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    border: 1px solid #bdbdbd; /* Borde del input */
+    border-radius: 8px;
+    flex-grow: 1;
+    font-size: 0.9em;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    background-color: #4caf50; /* Verde del botón buscar */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #43a047; /* Verde más oscuro al pasar el ratón */
+}
+
+#tabla-visitantes table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden; /* Para que el borde redondeado funcione en la tabla */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+#tabla-visitantes th, #tabla-visitantes td {
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+#tabla-visitantes th {
+    background-color: #f5f5f5; /* Gris muy claro para el encabezado */
+    font-weight: bold;
+    color: #424242;
+}
+
+#tabla-visitantes tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Un gris aún más claro para filas pares */
+}
+
+.hidden {
+    display: none;
+}
+
+#lista-clientes h2,
+#panel-designacion h2,
+#panel-notificaciones h2 {
+    color: #424242;
+    margin-bottom: 15px;
+}
+
+#lista-clientes ul {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-clientes li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    color: #616161;
+}
+
+#lista-clientes li:last-child {
+    border-bottom: none;
+}
+
+#panel-designacion p {
+    color: #616161;
+}
+
+#panel-notificaciones ul {
+    list-style: none;
+    padding: 0;
+}
+
+#panel-notificaciones li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    color: #616161;
+}
+
+#panel-notificaciones li:last-child {
+    border-bottom: none;
+}

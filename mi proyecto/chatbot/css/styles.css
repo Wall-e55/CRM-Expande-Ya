@@ -1,0 +1,129 @@
+/* Custom Colors */
+:root {
+    --orange: #ff9100;
+    --primary: #301a91;
+    --light-blue: #5e35b0;
+    --light-gray: #380808;
+}
+
+/* Utility Classes */
+.bg-orange {
+    background-color: var(--orange);
+}
+
+.bg-primary {
+    background-color: var(--primary);
+}
+
+.bg-light-blue {
+    background-color: var(--light-blue);
+}
+
+.bg-light {
+    background-color: var(--light-gray);
+}
+
+.text-white {
+    color: white;
+}
+
+.btn-orange {
+    background-color: var(--orange);
+    color: white;
+}
+
+.btn-orange:hover {
+    background-color: #e05a2b;
+    color: white;
+}
+
+/* Layout Styles */
+.top-bar {
+    height: 60px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+    width: 250px;
+    min-height: calc(100vh - 60px);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.chatbot-section {
+    min-height: calc(100vh - 60px);
+    background-color: #f8f9fa;
+}
+
+.chat-container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    flex: 0 0 auto;
+}
+
+.chat-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+}
+
+.chat-footer {
+    flex: 0 0 auto;
+}
+
+/* Nav Button Styles */
+.nav-btn {
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: translateX(5px);
+    opacity: 0.9;
+}
+
+.nav-btn.active {
+    background-color: var(--orange) !important;
+}
+
+/* Message Bubbles */
+.message-bubble {
+    max-width: 70%;
+    position: relative;
+}
+
+.bot-message .message-bubble {
+    background-color: #e9ecef;
+    border-radius: 0 15px 15px 15px;
+}
+
+.user-message {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-message .message-bubble {
+    background-color: var(--orange);
+    color: white;
+    border-radius: 15px 0 15px 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+    
+    .sidebar .nav-btn span {
+        display: none;
+    }
+    
+    .sidebar .nav-btn i {
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPANDE YA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="clientes\css\styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header naranja -->
+        <div class="app-header">
+            <h1>EXPANDE YA</h1>
+        </div>
+        
+        <div class="app-content">
+            <!-- Sidebar azul -->
+            <div class="app-sidebar">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="citas.html">
+                            <i class="fas fa-cog me-2"></i>Citas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <i class="fas fa-users me-2"></i>Clientes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-concierge-bell me-2"></i>Servicios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-money-bill-wave me-2"></i>Pagos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-ticket-alt me-2"></i>Tickets
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chatbot.html">
+                            <i class="fas fa-robot me-2"></i>Chatbot</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-chart-bar me-2"></i>Reportes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Contenido principal -->
+            <div class="app-main">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Lista de Clientes</h3>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus me-1"></i> Nuevo Cliente
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Teléfono</th>
+                                    <th>Correo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jose Pablo</td>
+                                    <td>Paucar</td>
+                                    <td>978456113</td>
+                                    <td>josei@gmail.com</td>
+                                    <td>
+                                        <button class="btn btn-warning btn-sm me-1">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Pepito</td>
+                                    <td>Flores</td>
+                                    <td>978756113</td>
+                                    <td>pepe2@gamil.com</td>
+                                    <td>
+                                        <button class="btn btn-warning btn-sm me-1">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="clientes\js\cliente.js"></script>
+</body>
+</html>
