@@ -1,0 +1,57 @@
+/* Fondo y tipografía global */
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #2e318f 0%, #fa6b1b 100%);
+}
+
+/* Contenedor del detalle */
+.form-container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 32px 28px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+/* Título */
+h2 {
+    color: #2e318f;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Detalles del cliente */
+p {
+    font-size: 1.1em;
+    margin: 12px 0;
+    color: #333;
+}
+strong {
+    color: #fa6b1b;
+}
+
+/* Botón volver */
+.btn-group {
+    margin-top: 24px;
+    text-align: center;
+}
+.btn {
+    padding: 10px 28px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    background: #eee;
+    color: #2e318f;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+}
+.btn:hover {
+    background: #d1d1d1;
+}
+
