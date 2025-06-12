@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM</title>
+    <link rel="stylesheet" href="citas/css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Bienvenido... (nombre de usuario del CRM)</h1>
+        <div class="header-actions">
+            <button aria-label="Notificaciones"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bell" class="svg-inline--fa fa-bell fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm216-272V128c0-35.35-28.65-64-64-64H64c-35.35 0-64 28.65-64 64v112l73.44 92.36c19.2 24.16 49.85 31.54 75.95 19.36l8.53-4.3c16.65-8.42 26.86-25.84 26.86-45.36V128h64v141.76c0 19.52 10.21 36.94 26.86 45.36l8.53 4.3c26.09 12.18 56.74 4.8 75.95-19.36L416 240z"></path></svg></button>
+            <button aria-label="Cerrar sesión"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sign-out-alt" class="svg-inline--fa fa-sign-out-alt fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M497.9 280.2L323.1 455.1c-15.2 15.2-39.9 4.5-39.9-17.9V384H128c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h155.1v-53.2c0-22.4 24.7-33.1 39.9-17.9l174.8 174.9c15.6 15.6 15.6 40.9 0 56.5zM48 32h320c26.5 0 48 21.5 48 48V416c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48z"></path></svg></button>
+        </div>
+    </header>
+
+    <aside class="main-sidebar">
+        <nav>
+            <ul>
+                <li><button id="btn-citas">Citas</button></li>
+                <li><a href="cliente.html" class="sidebar-button" id="btn-clientes">Clientes</a></li>
+                <li><button id="btn-servicios">Servicios</button></li>
+                <li><button id="btn-pagos">Pagos</button></li>
+                <li><button id="btn-tickets">Tickets</button></li>
+                <li><a href="chatbot.html" class="sidebar-button" id="btn-chatbot">Chatbot</a></li>
+                <li><button id="btn-reportes">Reportes</button></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <section id="panel-principal">
+            <nav class="secondary-nav">
+                <button id="btn-visitantes" class="active">Visitantes</button>
+                <button id="btn-clientes-lista">Clientes</button>
+                <button id="btn-designacion">Designación</button>
+                <button id="btn-notificaciones">Notificaciones</button>
+            </nav>
+
+            <div class="search-bar">
+                <label for="buscar">Buscar por:</label>
+                <input type="text" id="buscar" placeholder="Nombre o apellido">
+                <button id="btn-buscar">
+    <img src="imagenes/lupa.png" alt="Buscar" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+    Buscar
+</button>
+            </div>
+
+            <div id="tabla-visitantes">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Razón Social</th>
+                            <th>Teléfono</th>
+                            <th>Correo electrónico</th>
+                            <th>Fecha y hora</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pepito Flores</td>
+                            <td>Pollería el hueso</td>
+                            <td>965632524</td>
+                            <td>info@polleria.com</td>
+                            <td>14/05/2025 12:30</td>
+                            <td>Atendido</td>
+                        </tr>
+                        <tr>
+                            <td>Juanita</td>
+                            <td>Restaurante el rico</td>
+                            <td>987526325</td>
+                            <td>info@elrico.com</td>
+                            <td>10/05/2025 13:00</td>
+                            <td>Cancelado</td>
+                        </tr>
+                        <tr>
+                            <td>Gabriel</td>
+                            <td></td>
+                            <td>968745214</td>
+                            <td>gabriel@gmail.com</td>
+                            <td>20/05/2025 15:30</td>
+                            <td>Pendiente</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="lista-clientes" class="hidden">
+                <h2>Lista de Clientes</h2>
+                <ul>
+                    <li>Cliente A</li>
+                    <li>Cliente B</li>
+                    <li>Cliente C</li>
+                    </ul>
+            </div>
+
+            <div id="panel-designacion" class="hidden">
+                <h2>Panel de Designación</h2>
+                <p>Aquí se mostrará la información de designación.</p>
+                </div>
+
+            <div id="panel-notificaciones" class="hidden">
+                <h2>Notificaciones</h2>
+                <ul>
+                    <li>Notificación 1</li>
+                    <li>Notificación 2</li>
+                    </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="citas/js/script.js"></script>
+</body>
+</html>
